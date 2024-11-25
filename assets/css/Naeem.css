@@ -202,9 +202,14 @@ color:#ffffff
 }
 
 .tertiary-gray {
-    color: #475467 !important;
+    color: #475467  !important;
 }
-
+.light_gray{
+    color: #858585;
+}
+.dark_gray{
+    color:#6F7784;
+}
 .tertiary-black {
     color: #344054;
 }
@@ -217,6 +222,7 @@ color:#ffffff
 .button_bg{
     background-color:#EBF3F6 !important;
 }
+
 
 /* ----------------------------Main Padding---------------------------- */
 .p_80 {
@@ -317,10 +323,10 @@ color:#ffffff
     background-color: #f8f9fa;
 }
 
-/* .custom-table {
+.custom-table {
     border: 1px solid #EAECF0;
     border-radius: 20px !important;
-} */
+}
 
 .table-container {
     border-radius: 10px;
@@ -768,6 +774,9 @@ table td,th{
 }
 .custom-text-area::placeholder{
     color: #344054 !important;
+    font-size: 16px;
+    font-weight:400;
+    font-family: Plus Jakarta Sans;
 }
 .custom-select::placeholder{
     color: #344054 !important;
