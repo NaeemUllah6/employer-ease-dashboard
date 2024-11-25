@@ -208,7 +208,7 @@ color:#ffffff
     color: #858585;
 }
 .dark_gray{
-    color:#6F7784;
+    color:#6F7784 !important;
 }
 .tertiary-black {
     color: #344054;
