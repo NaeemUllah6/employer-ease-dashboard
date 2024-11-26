@@ -487,24 +487,28 @@
                         </div>
                         <div class="border-r-12 border p_16 bg-white mt-4">
                             <p class="fs_18 fw_600 j_family lh_28">File Upload</p>
-                            <p class="fs_16 Nunito_family fw_400 color_gray pt-2">Lorem ipsum dolor sit amet consectetur.
+                            <p class="fs_16 Nunito_family fw_400 color_gray pt-2">Lorem ipsum dolor sit amet
+                                consectetur.
                                 Tortor sed aliquam sed id enim donec</p>
-                                <div class="file-input-container">
-                                    <input type="file" id="FileInput" class="file-input" />
-                                    <label for="fileUpload" class="file-input-label">
-                                      <div class="upload-icon">
-                                        <img src="assets/images/employer-ease-pics/black-cloud-up.svg" alt="Upload Icon" />
-                                      </div>
-                                      <p>
-                                        <span class="main_color fs_14 fw_600 j_family">Click to upload</span> or drag and drop<br />
-                                        <small class="fs_12 j_family fw_400">SVG, PNG, JPG, or GIF (max. 800x400px)</small>
-                                      </p>
-                                    </label>
-                                  </div>
-                                  <div class="d-flex mt-4 gap-3 justify-content-end align-items-center">
-                                    <button class="whole_button border-0 main_color button_bg">Cancel</button>      
-                            <button class="whole_button text-white" id="uploadButton2">Upload</button>
-                                  </div>
+                            <div class="file-input-container">
+                                <input type="file" id="FileInput" class="file-input" />
+                                <label for="fileUpload" class="file-input-label">
+                                    <div class="upload-icon">
+                                        <img src="assets/images/employer-ease-pics/black-cloud-up.svg"
+                                            alt="Upload Icon" />
+                                    </div>
+                                    <p>
+                                        <span class="main_color fs_14 fw_600 j_family">Click to upload</span> or drag
+                                        and drop<br />
+                                        <small class="fs_12 j_family fw_400">SVG, PNG, JPG, or GIF (max.
+                                            800x400px)</small>
+                                    </p>
+                                </label>
+                            </div>
+                            <div class="d-flex mt-4 gap-3 justify-content-end align-items-center">
+                                <button class="whole_button border-0 main_color button_bg">Cancel</button>
+                                <button class="whole_button text-white" id="uploadButton2">Upload</button>
+                            </div>
                         </div>
 
 
@@ -571,19 +575,14 @@
     </script>
     <script>
         document.getElementById('uploadButton1').addEventListener('click', () => {
-            // Create a new file input
+          
             const fileInput = document.createElement('input');
             fileInput.type = 'file';
-            fileInput.multiple = true; // Allow multiple file selection
+            fileInput.multiple = true; 
             fileInput.style.display = 'none';
 
-            // Append to the body
             document.body.appendChild(fileInput);
-
-            // Trigger file input
             fileInput.click();
-
-            // Handle file selection
             fileInput.addEventListener('change', () => {
                 if (fileInput.files.length > 0) {
                     const fileContainer = document.getElementById('fileContainer');
@@ -596,58 +595,50 @@
                         cardDiv.className = 'file-card text-center';
 
                         if (file.type.startsWith('image/')) {
-                            // Handle image files
                             const reader = new FileReader();
                             reader.onload = function (e) {
-                                // Create an image element
                                 const img = document.createElement('img');
                                 img.src = e.target.result;
                                 img.alt = file.name;
                                 img.style.maxWidth = '100%';
                                 img.style.height = '150px';
                                 img.style.objectFit = 'cover';
-
-                                // Append the image to the card
                                 cardDiv.appendChild(img);
                             };
                             reader.readAsDataURL(file);
                         } else {
-                            // Handle non-image files with Font Awesome icons
+                      
                             const icon = document.createElement('i');
-                            icon.className = getFontAwesomeIcon(file.name); // Get Font Awesome icon class
+                            icon.className = getFontAwesomeIcon(file.name);
                             icon.style.fontSize = '4rem';
                             icon.style.color = '#3684A4';
 
-                            // Append the Font Awesome icon to the card
+                          
                             cardDiv.appendChild(icon);
                         }
 
-                        // Create a paragraph for the file name
+                      
                         const fileName = document.createElement('p');
                         fileName.textContent = file.name;
                         fileName.style.marginTop = '10px';
 
-                        // Append the file name to the card
+                     
                         cardDiv.appendChild(fileName);
 
-                        // Append the card to the column
+                       
                         colDiv.appendChild(cardDiv);
 
-                        // Append the column to the container
+                   
                         fileContainer.appendChild(colDiv);
                     });
 
-                    // Clean up
+                   
                     document.body.removeChild(fileInput);
                 }
             });
         });
 
-        /**
-         * Function to return a Font Awesome icon class based on file extension.
-         * @param {string} fileName - The name of the file.
-         * @returns {string} - The Font Awesome icon class.
-         */
+       
         function getFontAwesomeIcon(fileName) {
             const extension = fileName.split('.').pop().toLowerCase();
             const fileIcons = {
@@ -661,7 +652,7 @@
                 txt: 'fas fa-file-alt',
                 zip: 'fas fa-file-archive',
                 rar: 'fas fa-file-archive',
-                default: 'fas fa-file', // Generic file icon
+                default: 'fas fa-file', 
             };
 
             return fileIcons[extension] || fileIcons['default'];
@@ -675,21 +666,21 @@
             const uploadButton = document.getElementById("uploadButton2");
             const imageContainer = document.getElementById("imageContainer");
 
-            let selectedFile = null; // To store the selected file
+            let selectedFile = null;
 
-            // Listen for file selection
+         
             fileInput.addEventListener("change", (event) => {
                 const file = event.target.files[0];
                 if (file && file.type.startsWith("image/")) {
-                    selectedFile = file; // Store the selected file
+                    selectedFile = file;
 
                 } else {
-                    selectedFile = null; // Reset if the file is not an image
+                    selectedFile = null; 
                     alert("Please select a valid image file.");
                 }
             });
 
-            // Handle button click to post the image
+           
             uploadButton.addEventListener("click", () => {
                 if (!selectedFile) {
                     alert("No image selected! Please select an image first.");
@@ -700,36 +691,36 @@
                 }
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    // Create a column for the new image
+                
                     const colDiv = document.createElement("div");
                     colDiv.className = "col-md-4 col-sm-6 col-12 mb-4";
 
-                    // Create a card to display the image
+                   
                     const cardDiv = document.createElement("div");
                     cardDiv.className = "file-card";
 
-                    // Create an image element
+                  
                     const img = document.createElement("img");
                     img.src = e.target.result;
                     img.alt = selectedFile.name;
 
-                    // Create a paragraph for the file name
+                  
                     const fileName = document.createElement("p");
                     fileName.textContent = selectedFile.name;
 
-                    // Append the image and file name to the card
+                  
                     cardDiv.appendChild(img);
                     cardDiv.appendChild(fileName);
 
-                    // Append the card to the column
+                  
                     colDiv.appendChild(cardDiv);
 
-                    // Append the column to the image container
+                    
                     imageContainer.appendChild(colDiv);
                 };
-                reader.readAsDataURL(selectedFile); // Read the file as a Data URL
+                reader.readAsDataURL(selectedFile); 
 
-                // Reset the file input and selected file
+              
                 fileInput.value = "";
                 selectedFile = null;
             });
