@@ -154,3 +154,7 @@ liked.addEventListener('click', () => {
       });
   });
 })();
+
+// ------------------------------File upload template2----------------------------------
+// Select the elements
+
