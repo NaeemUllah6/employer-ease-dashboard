@@ -255,10 +255,10 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </span>
-                            <h2> Community</h2>
+                            <h2>Community</h2>
                         </a>
 
-                        <a class="nav-item custom-nav-item" href="#">
+                        <a class="nav-item custom-nav-item" href="document-center.html">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
                                     fill="none">
@@ -376,7 +376,7 @@
                                 <div class="dropdown">
                                     <button class="d-block border-0 bg-transparent" data-bs-toggle="dropdown"
                                         aria-expanded="false" type="button">
-                                        <img src="assets/images/employer-ease-pics/calendar.svg" alt="" />
+                                        <img src="assets/images/employer-ease-pics/calendar.svg" alt="image" />
                                         <span class="dot active"></span>
                                     </button>
                                     <!-- <ul class="dropdown-menu">
@@ -393,7 +393,7 @@
                                 <div class="dropdown">
                                     <button class="d-block border-0 bg-transparent" data-bs-toggle="dropdown"
                                         aria-expanded="false" type="button">
-                                        <img src="assets/images/employer-ease-pics/cart.svg" alt="" />
+                                        <img src="assets/images/employer-ease-pics/cart.svg" alt="image" />
                                         <span class="dot active"></span>
                                     </button>
                                     <!-- <ul class="dropdown-menu">
@@ -412,7 +412,7 @@
                                         data-bs-toggle="dropdown" aria-expanded="false" type="button">
                                         <span class=""><img class="me-2"
                                                 src="assets/images/employer-ease-pics/language-switch.svg"
-                                                alt="" />Eng<sub> (US)</sub></span>
+                                                alt="image" />Eng<sub> (US)</sub></span>
                                     </button>
                                     <ul class="dropdown-menu ">
                                         <li>
@@ -470,32 +470,32 @@
                 <div class="dashboard-content">
                     <div class="position-relative">
                         <!-- -------------------------------HR & Payroll section---------------------------- -->
-                        <div class="row">
+                        <div class="row g-4">
                             <div class="col-12 col-md-8 col-lg-8">
                                 <form action="">
-                                    <div class="bg-white border-r-12 p-4">
+                                    <div class="bg-white border-r-12 p_16">
                                         <div class="d-flex  align-items-center gap-3">
-                                            <img src="assets/images/employer-ease-pics/user-profile.svg" alt="">
+                                            <img src="assets/images/employer-ease-pics/user-profile.svg" alt="image">
                                             <p class="fs_16 fw_500 j_family">Betty Copper</p>
                                         </div>
                                         <textarea class="rounded form-control custom-text-area mt-4" name="" rows="3"
                                             id="" placeholder="What's on your mind"></textarea>
                                         <div class="d-flex gap-3 mt-4 align-items-center justify-content-end">
-                                            <img class="d-none" id="preview" alt="Image preview will appear here"
-                                                style="max-width: 100px; height: auto;" />
-                                            <button class="border-0 bg-transparent" id="fileButton">
+                                            <input type="file" id="fileInput" class="file-input d-none" multiple>
+                                            <div id="imagePreviewContainer" class="d-flex align-items-center mt-3">
+                                                <!-- Dynamic images will appear here -->
+                                            </div>
+                                            <button id="fileButton" class="border-0 bg-transparent">
                                                 <img src="assets/images/employer-ease-pics/document-icon.svg" alt="">
                                             </button>
-                                            <input type="file" id="fileInput" class="file-input d-none"
-                                                accept="image/*">
                                             <button type="submit" class="whole_button text-white">Post</button>
                                         </div>
                                     </div>
                                 </form>
-                                <div class="bg-white border-r-12 p-4 mt-4">
+                                <div class="bg-white border-r-12 p_16 mt-4">
                                     <div class="d-flex justify-content-between gap-3">
                                         <div class="d-flex align-items-center gap-3">
-                                            <img src="assets/images/employer-ease-pics/user-profile.svg" alt="">
+                                            <img src="assets/images/employer-ease-pics/user-profile.svg" alt="image">
                                             <div>
                                                 <p class="fs_16 fw_500 j_family">Betty Copper</p>
                                                 <p class="fs_14 fw_400 j_family light_gray">Month ago. Posted in Forum
@@ -518,18 +518,127 @@
                                     </div>
                                     <hr class="py-0 my-0">
                                     <div class="d-flex align-items-center my-2 gap-3">
-                                        <div class="px-2 py-1 border rounded-circle"><i class="dark_gray fa-regular fa-heart"></i></div>
-                                        <div class="px-2 py-1 border rounded-circle"><i class="dark_gray fa-regular fa-flag"></i></div>
-                                        <div class="px-2 py-1 border rounded-circle"><i class="dark_gray fa-solid fa-share-nodes"></i></div>
-                                        <div><p class="fs_14 fw_400 j_family dark_gray">1 reply</p></div>
+                                        <button class="bg-transparent px-2 py-1 border rounded-circle"><i id="like-icon"
+                                                class="dark_gray fa-solid fa-heart"></i></button>
+                                        <div class="px-2 py-1 border rounded-circle"><i
+                                                class="dark_gray fa-regular fa-flag"></i></div>
+                                        <button class="bg-transparent px-2 py-1 border rounded-circle"><i id="share-btn"
+                                                class="dark_gray fa-solid fa-share-nodes"></i></button>
+                                        <div>
+                                            <p class="fs_14 fw_400 j_family dark_gray">1 reply</p>
+
+                                        </div>
                                     </div>
                                     <hr class="py-0 my-0">
+                                    <div class="mt-4">
+                                        <input style="height: 48px;" class="form-control border-r-8" type="text"
+                                            placeholder="Reply Here">
+                                    </div>
+                                </div>
+                                <div class="bg-white border-r-12 p_16 mt-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-md-8 col-lg-8">
+                                            <form action="">
+                                                <div class="custom-select-container w-100">
+                                                    <h2 class="fs_18 fw_600 j_family pb-3">Local Network</h2>
+                                                    <label class="fw_400 mb-4 fs_14 j_family lh_20 tertiary-black"
+                                                        for="select">Connect with others in your area and expand your
+                                                        network.</label>
+                                                    <div class="position-relative">
+                                                        <select class="ps-4" name="" id="">
+                                                            <option value="">Select Location</option>
+                                                            <option value="">Lahore</option>
+                                                            <option value="">Karachi</option>
+                                                            <option value="">Islamabad</option>
+                                                        </select>
+                                                        <div class="position-absolute" style="top: 8px;left: 8px;">
+                                                            <img style="width: 13px;height: 16px;"
+                                                                src="assets/images/employer-ease-pics/location-dot.svg"
+                                                                alt="image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <button
+                                                    class="border-r-8 whole_button bg-white border tertiary-black fw_600 mt-4">Find
+                                                    Local Events
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <img class="h-100 w-100"
+                                                src="assets/images/employer-ease-pics/small-location-img.svg"
+                                                alt="image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-4">
+                                <div style="top: 125px;z-index: 1;" class="sticky-top">
+                                    <div class="p_16 bg-white border-r-12 ">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <img width="56px" height="56px"
+                                                src="assets/images/employer-ease-pics/light-bulb.svg" alt="">
+                                            <h3 class="fs_18 fw_600 j_family lh_22">Startup Showcase</h3>
+                                        </div>
+                                        <p class="fs_16 fw_400 lh_26 Nunito_family pt-3 color_gray">A Community forum
+                                            for
+                                            Startups where you can ask your peers questions about
+                                            starting up your business and where you can also help others with their
+                                            questions.</p>
+                                        <button
+                                            class="py-2 w-100 bg-transparent border-r-8 mt-2 border fw_600 j_family fs_16">Join
+                                            the Forum</button>
+                                    </div>
+
+
+                                    <div class="p_16 bg-white border-r-12 mt-4 d-flex flex-column gap-3">
+                                        <h3 class="fs_18 fw_600 j_family lh_28">Advisor Contact</h3>
+                                        <img class="img-fluid w-100" style="max-height: 205px;"
+                                            src="assets/images/employer-ease-pics/advisor-conact.png" alt="">
+                                        <button
+                                            class="py-2 w-100 bg-transparent border-r-8 border fw_600 j_family fs_16">Connect
+                                            Local Experts</button>
+                                    </div>
+
+                                    <div class="p_16 bg-white border-r-12 mt-4">
+                                        <h4 class="fs_20 fw_600 lh_28 j_family">Attendance</h4>
+                                        <div class="d-flex align-items-center gap-3 mt-2">
+                                            <div><img width="56px" height="56px"
+                                                    src="assets/images/employer-ease-pics/attendace-profile.svg" alt="">
+                                            </div>
+                                            <div>
+                                                <h3 class="fs_16 fw_500 j_family lh_22">Cameron Williamson</h3>
+                                                <a href="#"
+                                                    class="fs_12 j_family text-decoration-none fw_700 lh_20 main_color">View
+                                                    Profile</a>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="d-flex align-items-center gap-3 border border-start-0 border-end-0 mt-2 py-2">
+
+                                            <div><img width="56px" height="56px"
+                                                    src="assets/images/employer-ease-pics/attendace-profile.svg" alt="">
+                                            </div>
+                                            <div>
+                                                <h3 class="fs_16 fw_500 j_family lh_22">Cameron Williamson</h3>
+                                                <a href="#"
+                                                    class="fs_12 j_family text-decoration-none fw_700 lh_20 main_color">View
+                                                    Profile</a>
+                                            </div>
+                                        </div>
+
+
+                                        <button
+                                            class="py-2 w-100 bg-transparent border-r-8 mt-3 border fw_600 j_family fs_16">Show
+                                            More</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-    </section>
 
-    <!-------------------------- ********** Section 1 ********** ------------------------->
+    </section>
 
     <!-- ************************Scripts Start Here*********************************-->
 
@@ -544,7 +653,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!--------------------------------- Popper Js Ends----------------------------->
 
 
@@ -589,31 +698,6 @@
             });
         }
     </script>
-    <script>
-        $(document).ready(function () {
-
-            $(document).on("shown.bs.dropdown", ".dropdown", function () {
-
-                const button = $(this).find('[data-bs-toggle="dropdown"]');
-                const buttonPos = button.offset();
-                const buttonWidth = button.outerWidth();
-                const buttonHeight = button.outerHeight();
-
-                $(this).find(".dropdown-menu.custom-menu").appendTo("body").css({
-                    position: "absolute",
-                    top: buttonPos.top + buttonHeight,
-                    right: buttonPos.left,
-                    width: buttonWidth,
-                });
-            });
-
-        });
-    </script>
-    <script>
-
-
-    </script>
-
 </body>
 
 </html>
